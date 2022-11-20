@@ -76,16 +76,16 @@ public class CustomerInput {
         this.zipCode = zipCode;
     }
 
-    public Customer getCustomerEntity() {
+    public Customer getCustomerEntity(){
         Customer customer = new Customer();
-        customer.setAddress(this.address);
-        customer.setCity(this.city);
-        customer.setEmail(this.email);
-        customer.setState(this.state);
         customer.setFirstName(this.firstName);
         customer.setLastName(this.lastName);
-        customer.setZipCode(this.zipCode);
+        customer.setEmail(this.email);
         customer.setPhoneNumber(this.phoneNumber);
+        customer.setAddress(this.address);
+        customer.setCity(this.city);
+        customer.setState(this.state);
+        customer.setZipCode(this.zipCode);
         return customer;
     }
 }

@@ -1,17 +1,12 @@
 package com.govind.hplus.data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
-@Table(name="CUSTOMERS")
-public class Customer {
+@Table(name="SALESPEOPLE")
+public class Salesperson {
     @Id
-    @Column(name="CUSTOMER_ID")
+    @Column(name="SALESPERSON_ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @Column(name="FIRST_NAME")
@@ -31,12 +26,13 @@ public class Customer {
     @Column(name="ZIPCODE")
     private String zipCode;
 
+
     public long getId() {
         return id;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setId(long customerId) {
+        this.id = customerId;
     }
 
     public String getFirstName() {
@@ -59,8 +55,8 @@ public class Customer {
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmail(String emailAddress) {
+        this.email = emailAddress;
     }
 
     public String getPhoneNumber() {

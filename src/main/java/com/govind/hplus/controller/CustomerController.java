@@ -16,22 +16,22 @@ public class CustomerController {
     }
 
     @QueryMapping
-    public Iterable<Customer> customers() {
+    public Iterable<Customer> customers(){
         return this.customerRepository.findAll();
     }
 
     @QueryMapping
-    public Customer customerById(@Argument Long id) {
+    public Customer customerById(@Argument Long id){
         return this.customerRepository.findById(id).orElseThrow();
     }
 
     @QueryMapping
-    public Customer customerByEmail(@Argument String email) {
+    public Customer customerByEmail(@Argument String email){
         return this.customerRepository.findCustomerByEmail(email);
     }
 
     @MutationMapping
-    public Customer addCustomer(@Argument("input") CustomerInput customerInput) {
+    public Customer addCustomer(@Argument(name="input") CustomerInput customerInput){
         return this.customerRepository.save(customerInput.getCustomerEntity());
     }
 }
